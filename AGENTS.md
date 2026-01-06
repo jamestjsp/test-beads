@@ -2,6 +2,22 @@
 
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
 
+## Architecture
+
+Simple Cobra CLI app. Entry point `main.go` → `cmd.Execute()`. All commands in `cmd/root.go`:
+- `addCmd`, `listCmd`, `doneCmd` registered via `rootCmd.AddCommand()`
+- Todos stored in `~/.todos.json` as JSON array
+
+## Build & Run
+
+```bash
+go build -o todo .    # Build binary
+./todo add "task"     # Add todo
+./todo list           # List todos
+./todo done 1         # Complete todo #1
+```
+
+
 ## Quick Reference
 
 ```bash
